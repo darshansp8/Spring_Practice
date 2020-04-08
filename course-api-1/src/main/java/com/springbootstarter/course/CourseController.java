@@ -29,7 +29,7 @@ public class CourseController {
 			return courseService.getCourse(id);
 		}
 		
-		@RequestMapping(method=RequestMethod.POST, value="/topics/{topicid}/courses")
+		@RequestMapping(method=RequestMethod.POST, value="/topics/{topicId}/courses")
 		public void addTopic(@RequestBody Course course, @PathVariable String topicId) {
 			course.setTopic(new Topic(topicId, "", ""));
 			courseService.addCourse(course);

@@ -14,10 +14,10 @@ public class CourseService {
 	@Autowired
 	private CourseRepository courseRepository;
 	
-	public List<Course> getAllCourses(String id){
+	public List<Course> getAllCourses(String topicId){
 //		return topics;
 		List<Course> courses = new ArrayList<>();
-		courseRepository.findAll()
+		courseRepository.findByTopicId(topicId)
 		.forEach(courses::add);
 		return courses;
 	}
@@ -35,7 +35,7 @@ public class CourseService {
 
 	public void updateCourse(Course course) {
 		// TODO Auto-generated method stub
-		
+		 
 //		for(int i = 0; i < topics.size(); i++) {
 //			Topic t = topics.get(i);
 //			if(t.getId().equals(id)) {
